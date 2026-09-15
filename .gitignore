@@ -1,0 +1,21 @@
+.env
+app/config.py
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-*
+
+# Virtual env metadata
+
+.venv
+
+# pytest cache
+.pytest_cache
+__pycache__/
+*.pyc
+
+# database
+*.db
+instance/
+.vscode
+package-lock.json
