@@ -8,6 +8,8 @@ from sqlalchemy_serializer import SerializerMixin
 class Game(db.Model,SerializerMixin):
     __tablename__="games"
 
+    serialize_rules=("-reviews.game",)
+
     id:Mapped[int]=mapped_column(primary_key=True)
     title:Mapped[str]
     genre:Mapped[str]
