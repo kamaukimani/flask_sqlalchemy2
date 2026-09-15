@@ -21,3 +21,6 @@ class Review(db.Model,SerializerMixin):
 
     game:Mapped["Game"]=relationship(back_populates="reviews")
     user:Mapped["User"]=relationship(back_populates="reviews")
+
+    def __repr__(self):
+        return f"<Review ({self.id}) of {self.game}: {self.score}/10>"

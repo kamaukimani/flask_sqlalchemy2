@@ -19,3 +19,6 @@ class User(db.Model,SerializerMixin):
     reviews:Mapped[List["Review"]]=relationship(back_populates="user",cascade="all,delete-orphan")
 
     games=association_proxy("reviews","game",creator=lambda game_obj:Review(game=game_obj))
+
+    def __repr__(self):
+        return f"<User ({seld.id}) {self.name}>"
