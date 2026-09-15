@@ -1,6 +1,6 @@
 from datetime import datetime
 from sqlalchemy import func,ForeignKey
-from sqlalchemy.orm import Mapped,mappped_column,relationship
+from sqlalchemy.orm import Mapped,mapped_column,relationship
 from app.db import db
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
