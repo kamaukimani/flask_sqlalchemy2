@@ -15,3 +15,5 @@ class User(db.Model,SerializerMixin):
     updated_at:Mapped[datetime]=mapped_column(server_default=func.now(),onupdate=func.now())
 
     reviews:Mapped[List["Review"]]=relationship(back_populates="user",cascade="all,delete-orphan")
+
+    games=association_proxy("reviews","game",creator=lambda game_obj:Review(game=game_obj))
