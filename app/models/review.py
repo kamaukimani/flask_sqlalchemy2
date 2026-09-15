@@ -8,6 +8,8 @@ from sqlalchemy_serializer import SerializerMixin
 class Review(db.Model,SerializerMixin):
     __tablename__="reviews"
 
+    serialize_rules=("-game.reviews","-user.reviews",)
+
     id:Mapped[int]=mapped_column(primary_key=True)
     score:Mapped[int]
     comment:Mapped[str]
