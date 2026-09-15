@@ -14,5 +14,7 @@ class Review(db.Model,SerializerMixin):
     created_at:Mapped[datetime]=mapped_column(server_default=func.now())
     updated_at:Mapped[datetime]=mapped_column(server_default=func.now(),onupdate=func.now())
     
-    game_id:Mapped[int]=mapped_column(ForeignKey("games.id"))
-    user_id:Mapped[int]=mapped_column(ForeignKey("users.id"))
+    game_id:Mapped[int]=mapped_column(ForeignKey("games.id"),primary_key=True)
+    user_id:Mapped[int]=mapped_column(ForeignKey("users.id"),primary_key=True)
+
+    game:Mapped["Game"]=relationship(back_populates="reviews")
