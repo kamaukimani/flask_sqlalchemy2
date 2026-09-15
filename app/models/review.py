@@ -18,3 +18,4 @@ class Review(db.Model,SerializerMixin):
     user_id:Mapped[int]=mapped_column(ForeignKey("users.id"),primary_key=True)
 
     game:Mapped["Game"]=relationship(back_populates="reviews")
+    user:Mapped["User"]=relationship(back_populates="reviews")
