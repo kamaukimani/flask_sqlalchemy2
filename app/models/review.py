@@ -4,6 +4,7 @@ from sqlalchemy.orm import Mapped,mapped_column,relationship
 from app.db import db
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
+from typing import List
 
 class Review(db.Model,SerializerMixin):
     __tablename__="reviews"
