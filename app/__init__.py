@@ -10,9 +10,10 @@ def create_app():
     app.config.from_object(Config)
     app.json.compact=False
 
+    db.init_app(app)
     migrate.init_app(app,db)
 
-    db.init_app(app)
+    
 
     
     return app
