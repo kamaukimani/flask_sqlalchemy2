@@ -2,7 +2,7 @@ from flask import Flask
 from .db import db,migrate
 from .config import Config
 from .models import *
-from .routes import game_bp,user_bp
+from .routes import game_bp,user_bp,review_bp
  
 
 def create_app():
@@ -17,6 +17,7 @@ def create_app():
     
     app.register_blueprint(game_bp,url_prefix="/game")
     app.register_blueprint(user_bp,url_prefix="/user")
+    app.register_blueprint(review_bp,url_prefix="/review")
     
     return app
 
