@@ -1,0 +1,3 @@
+--SELECT * FROM games;
+--SELECT * FROM reviews;
+--SELECT * FROM users;
